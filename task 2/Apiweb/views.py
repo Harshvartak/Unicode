@@ -2,6 +2,7 @@ from django.shortcuts import render
 import json
 import requests
 import time
+from django.http import HttpResponse
 
 
 def spaceX(request):
@@ -21,5 +22,5 @@ def spaceX(request):
 
 
 
-	return render(request,'final.html',{'final':final})
+	return HttpResponse("<p><h2>{}</h2></p>" .format(i) for i in final)
 
