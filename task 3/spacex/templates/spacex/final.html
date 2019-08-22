@@ -61,7 +61,7 @@
     </div>
   </section>
 
-  <div class="album py-5 bg-light">
+  <div class="album py-5 " style="background-color: black">
     <div class="container">
 
       <div class="row">
@@ -70,11 +70,11 @@
         {% for i in final %}
         <div class="col-md-4">
           <div class="card mb-4 shadow-sm">
-            <img class="card-img-top" src="{{ i.mission_patch }}"/>
+            <img class="card-img-top" src="{{ i.mission_patch }}" alt="No Image Yet"/>
             <div class="card-body">
               <p class="card-text">Flight number: {{ i.flight_number }}</p>
-              <p class="card-text">Rocket name:{{ i.rocket_name }}</p>
-
+              <p class="card-text">Rocket name: {{ i.rocket_name }}</p>
+              <a href="{{ i.mission_patch }}"><p class="card-text">Mission patch Link : {{ i.mission_patch }}</p></a>
               <div class="d-flex justify-content-between align-items-center">
                 <small class="text">{{ i.launch_date }}</small>
               </div>

@@ -18,6 +18,7 @@ def spaceX(request):
 		di={}
 		di={'flight_number':i['flight_number'],'rocket_name':i['rocket']['rocket_name'],'launch_date':time.strftime("%D %H:%M", time.localtime(i['launch_date_unix'])),'mission_patch':i['links']['mission_patch']}
 		final.append(di)
+	print(di)	
 
 
 
