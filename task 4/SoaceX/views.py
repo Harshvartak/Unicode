@@ -14,16 +14,16 @@ def spaceX(request):
 
 	for i in result:
 		#addition of data from data base after importing it ny API with JSON
-		add=models.spaceClass()
-		add.flight_number=i['flight_number']
-		add.rocket_name=i['rocket']['rocket_name']
+		space=models.spaceClass()
+		space.flight_number=i['flight_number']
+		space.rocket_name=i['rocket']['rocket_name']
 		#date object made compatible for model
-		add.launch_date=time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(i['launch_date_unix']))
-		add.mission_patch=i['links']['mission_patch']
-		add.save()
+		space.launch_date=time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(i['launch_date_unix']))
+		space.mission_patch=i['links']['mission_patch']
+		space.save()
 
 		data={"final":spaceClass.objects.all()}
-		ren=render_to_string('SoaceX/final.html',data)
+		ren=render_to_string('SoaceX/final.html',space)
 
 	return HttpResponse(ren)	
 
