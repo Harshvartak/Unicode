@@ -22,8 +22,9 @@ def spaceX(request):
 		space.mission_patch=i['links']['mission_patch']
 		space.save()
 
+
 		data={"final":spaceClass.objects.all()}
-		ren=render_to_string('SoaceX/final.html',space)
+		ren=render_to_string('SoaceX/final.html',data)
 
 	return HttpResponse(ren)	
 
